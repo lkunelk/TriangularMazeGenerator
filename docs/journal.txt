@@ -1,0 +1,43 @@
+29 Nov 14
+The Project officially began. I was thinking of doing something different for this program. Maybe something sort of a game, where you have to walk in the maze and run from monsters or something. But I need to give it more thought.
+
+30 Nov 14
+So after thinking about this, I've decided not to make a game. However I wanted to try to make a trianglular maze. It seems like a cool idea, I drew some mazes in paint. And it probably isn't any harder to solve than the regular square maze, but it seems to be hard to create an array to store information about it.
+
+The problem is that it's going to be hard to represent the maze using arrays. I have an idea but it's a bit clunky. The idea is to have a 2d array, and inside the horizontal array have another array.
+
+1 Dec 14
+Today, I continued planning and trying to solve the problem of somehow drawing the maze on the screen. At school I drew diagrams of triangle tessalations to see the distances from each point of triangle to the other. With help from Thomas I came to realization that the problem at hand is simpler then I thought. It's hard to describe it in words, but the point is I thought I would have to use some complicated math to solve for positions of each point when in fact the distance could be calculated with a simple equation.
+
+2 Dec 14
+I created the Screen class which will display the maze.
+
+currently I'm working on the maze generator to create the triangle pattern before I proceed any further. To be specific I am coding the draw method in Screen class to draw the maze. Once it's finished I will proceed to testing
+
+actually I forgot to finish the calculatePositions() method so I can't draw anything yet. So I'm doing that.
+
+3 Dec 14
+So I managed to make the drawing part work, realizing that the hexagon pattern doesn't work for mazes that I was planning to make. Instead I should be displaying triangles at the centers of the calculated points. So I will modify the code to just do that.
+
+5 Dec 14
+So today, I implemented the generateMethod. There were a bunch of repeating code inside this method, therefore I decided to add 2 more private methods: decide() and removeWall().Along the way I encountered few problems, such as indexOutOfBounds errors, because the coordinate system in java confused me. When you go down on the screen the y increases, but by mistake I was subtracting in my method.
+
+another problem was that when I generated the maze, the whole maze would be empty. So to trace my program, I added the pausing feature to see how the maze is created step by step. That took me a while also because I was getting an error, which I had no idea how to fix.Whenever I repainted my Screen class, nothing would happen, the maze would update, but the screen didn't. After a long time, I looked at my past programs for solutions and I found it. The problem I realized was that in my paintComponent I had to call the super.paintComponent(). I'm not quiet sure why that works. But it did, so I continued on debugging.
+
+I was able to solve the problem of blank maze, by rechecking whether the neighbouring cells were unvisited, because at first I would check for that in the beginning of the method, but as the program extends the maze, those neigbouring cells may have been taken but my method didn't know. So the solution was to check those neighbouring cells again before moving.
+
+evening:
+It didn't take me much time to implement the solver class. It's basically like the generating part but easier. My solve method right now returns a boolean which indicates whether the path is good or not, but I think it doesn't need to return anything. I'm leaving it for now.
+
+Anyway, all the coding is done.Testing is also done.I need to document now and I may add some extra features if I have time.
+
+13 dec 14
+I was just looking over the code, and fixing the scaling, also I was thinking of changing the shape of the path displayed on the maze to be triangles instead of circles. But I'm leaving that for tommorow.
+
+16 dec 14
+so I decided to stay with circles, it has a nice look. I also added 4 buttons: generate, solve, save and load. I made the first 2 functional, the other two I will have to work on tomorrow.On top of that I added a title that hovers above the maze.
+
+I documented everything inside the code, so now all I have to do is work on external docs.
+
+18 dec 14
+I finally completed the external documents and I'm done the assignment!
