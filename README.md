@@ -4,4 +4,6 @@ The goal of this program is to generate mazes and then recursively solve them. T
 
 If you would like to try out the program i've included an executable jar file which you can run (given you have java installed)
 
+video: https://www.youtube.com/watch?v=1SJ_Vt5A6Jo
+
 ![smaple image](sample.png)
